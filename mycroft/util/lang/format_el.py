@@ -72,8 +72,8 @@ FRACTION_STRING_EL = {
 }
 
 
-def nice_number_en(number, speech, denominators):
-    """ English helper for nice_number
+def nice_number_el(number, speech, denominators):
+    """ Greek helper for nice_number
 
     This function formats a float to human understandable functions. Like
     4.5 becomes "4 and a half" for speech and "4 1/2" for text
@@ -102,16 +102,16 @@ def nice_number_en(number, speech, denominators):
 
     if num == 0:
         return str(whole)
-    den_str = FRACTION_STRING_EN[den]
+    den_str = FRACTION_STRING_EL[den]
     if whole == 0:
         if num == 1:
-            return_string = 'a {}'.format(den_str)
+            return_string = 'ένα {}'.format(den_str)
         else:
             return_string = '{} {}'.format(num, den_str)
     elif num == 1:
-        return_string = '{} and a {}'.format(whole, den_str)
+        return_string = '{} και ένα {}'.format(whole, den_str)
     else:
-        return_string = '{} and {} {}'.format(whole, num, den_str)
+        return_string = '{} και {} {}'.format(whole, num, den_str)
     if num > 1:
         return_string += 's'
     return return_string
